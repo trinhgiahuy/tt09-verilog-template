@@ -42,14 +42,14 @@ pinout:
   uo[7]: "test"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "a"
+  uio[1]: "a"
+  uio[2]: "a"
+  uio[3]: "a"
+  uio[4]: "a"
+  uio[5]: "a"
+  uio[6]: "a"
+  uio[7]: "a"
 
 # Do not change!
 yaml_version: 6
