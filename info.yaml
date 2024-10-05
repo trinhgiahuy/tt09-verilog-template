@@ -11,7 +11,7 @@ project:
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_trinhgiahuy"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -22,24 +22,24 @@ project:
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "test"
+  ui[1]: "test"
+  ui[2]: "test"
+  ui[3]: "test"
+  ui[4]: "test"
+  ui[5]: "test"
+  ui[6]: "test"
+  ui[7]: "test"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "test"
+  uo[1]: "test"
+  uo[2]: "test"
+  uo[3]: "test"
+  uo[4]: "test"
+  uo[5]: "test"
+  uo[6]: "test"
+  uo[7]: "test"
 
   # Bidirectional pins
   uio[0]: ""
