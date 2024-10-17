@@ -33,7 +33,7 @@ module tt_um_trinhgiahuy (
     .g1(mar_g1),
     .g2(mar_g2),
     .mar_out(mar_out)
-  )
+  );
 
   // mar outputs to uo_out
   assign uo_out[3:0] = mar_out;
