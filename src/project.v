@@ -30,6 +30,7 @@ module tt_um_trinhgiahuy (
     .select(mar_sel),
     .clk(clk),
     .clr(mar_clr),
+    .g(mar_g),
     .g1(mar_g1),
     .g2(mar_g2),
     .mar_out(mar_out)
