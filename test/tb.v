@@ -58,13 +58,18 @@ initial begin
 
    #10 rst_n = 1;
 
-   // Varies input
+   // Test case 1: Simple input to MAR
    #10 ui_in = 8'b00001010;   // d_in = 1010, select = 00
-   #10 uio_in = 8'b00000101;   // strobe g = 1, g1 = 0, g2 = 0 (enable mar) 
+   #10 uio_in = 8'b00000101;  // strobe g = 1, g1 = 0, g2 = 0 (enable mar) 
    #20 ui_in = 8'b00101111;   // d_in = 1111, select = 01 (change select)
 
+   // Test case 2: Additional behavior 
+   #20 ui_in = 8'b00011100;   // change input to test different select and input values
+   #10 uio_in = 8'b00000011;  // modify control signals  
+   
    // ADD MORE TESTCASES HERE
-   #50 $finish;
+   
+   #100 $finish;              // Ensure enough time before finishing the test, guarantee simulation stabilized
 end
 
 endmodule
