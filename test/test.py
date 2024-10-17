@@ -23,6 +23,9 @@ async def test_project(dut):
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
 
+    # Wait for a few clock cycles for the reset to settle
+    await ClockCycles(dut.clk, 5)
+    
     dut._log.info("Test project behavior after reset")
 
     # Set the input values you want to test
@@ -32,19 +35,23 @@ async def test_project(dut):
     # Test case 1: Simple input to MAR
     dut.ui_in.value = 0b00001010  # d_in = 1010, select = 00
     dut.uio_in.value = 0b00000101  # g = 1, g1 = 0, g2 = 0 (enable MAR)
-    await ClockCycles(dut.clk, 2)
-
-    # Check the output after 2 clock cycles
+    dut._log.info("Applying ui_in = 1010, uio_in = 00000101")
+    
+    await ClockCycles(dut.clk, 10)
+    
+    # Check the output after 10 clock cycles
     dut._log.info(f"uo_out: {dut.uo_out.value}")
     assert dut.uo_out.value == 0b1010, f"Expected 0b1010, got {dut.uo_out.value}"
 
     # Test case 2: Changing inputs
     dut.ui_in.value = 0b00101111  # d_in = 1111, select = 01
     dut.uio_in.value = 0b00000011  # g = 0, g1 = 0, g2 = 1 (disable MAR)
-    await ClockCycles(dut.clk, 2)
+    dut._log.info("Applying ui_in = 1111, uio_in = 00000011")
+    
+    await ClockCycles(dut.clk, 10)
 
     # Check the output after disabling the MAR
-    dut._log.info(f"uo_out: {dut.uo_out.value}")
+    dut._log.info(f"uo_out after disabling MAR: {dut.uo_out.value}")
     assert dut.uo_out.value == 0b1010, f"Expected 0b1010, got {dut.uo_out.value}"
 
     dut._log.info("End of test")
