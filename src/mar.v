@@ -1,5 +1,4 @@
 // mar.v
-`timescale 1ns/1ps
 
 // 4-to-1 multiplexer
 module ls157 (
