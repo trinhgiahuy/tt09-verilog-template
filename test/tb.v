@@ -64,8 +64,8 @@ initial begin
    #20 ui_in = 8'b00101111;   // d_in = 1111, select = 01 (change select)
 
    // Test case 2: Additional behavior 
-   #20 ui_in = 8'b00011100;   // change input to test different select and input values
-   #10 uio_in = 8'b00000011;  // modify control signals  
+   // #20 ui_in = 8'b00011100;   // change input to test different select and input values
+   // #10 uio_in = 8'b00000011;  // modify control signals  
    
    // ADD MORE TESTCASES HERE
    
