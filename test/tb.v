@@ -46,4 +46,25 @@ module tb ();
       .rst_n  (rst_n)     // not reset
   );
 
+// Add testbench code here for mar
+always #5 clk = ~clk;
+
+initial begin
+   clk = 0;
+   rst_n = 0;
+   ena = 1;
+   ui_in = 8'b00000000;
+   uio_in = 8'b00000000;
+
+   #10 rst_n = 1;
+
+   // Varies input
+   #10 ui_in = 8'b00001010;   // d_in = 1010, select = 00
+   #10 uio_in = 8'b00000101;   // strobe g = 1, g1 = 0, g2 = 0 (enable mar) 
+   #20 ui_in = 8'b00101111;   // d_in = 1111, select = 01 (change select)
+
+   // ADD MORE TESTCASES HERE
+   #50 $finish;
+end
+
 endmodule
