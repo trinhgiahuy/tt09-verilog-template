@@ -61,7 +61,10 @@ initial begin
    // Test case 1: Simple input to MAR
    #10 ui_in = 8'b00001010;   // d_in = 1010, select = 00
    #10 uio_in = 8'b00000101;  // strobe g = 1, g1 = 0, g2 = 0 (enable mar) 
+
+   // Test case 2: Changing input
    #20 ui_in = 8'b00101111;   // d_in = 1111, select = 01 (change select)
+   #10 uio_in = 8'b00000011;  // g = 0, g1 = 0, g2 = 1 (disable MAR)
 
    // Test case 2: Additional behavior 
    // #20 ui_in = 8'b00011100;   // change input to test different select and input values
