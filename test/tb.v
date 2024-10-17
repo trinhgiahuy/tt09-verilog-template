@@ -72,7 +72,7 @@ initial begin
    
    // ADD MORE TESTCASES HERE
    
-   #100 $finish;              // Ensure enough time before finishing the test, guarantee simulation stabilized
+   #1000 $finish;              // Ensure enough time before finishing the test, guarantee simulation stabilized
 end
 
 endmodule
