@@ -38,7 +38,7 @@ module mar (
     input wire clr,            
     input wire g,              // Strobe for the multiplexer (active low)
     input wire g1, g2,         // Enable signals for the register (active low)
-    output wire [3:0] MAR_out  
+    output wire [3:0] mar_out  
 );
 
     wire [3:0] mux_out;  
@@ -58,7 +58,7 @@ module mar (
       	.g1(g1),         // Enable signal 1 (active low)
       	.g2(g2),         // Enable signal 2 (active low)
         .d(mux_out),     // Data input from the MUX
-        .q(MAR_out)      // Register output connected to MAR_out
+        .q(mar_out)      // Register output connected to MAR_out
     );
 
 endmodule
